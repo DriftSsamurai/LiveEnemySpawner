@@ -1,0 +1,85 @@
+================================================================================
+           ENEMY SPAWNER PERSONALIZADO v1.0 PARA DEVIL MAY CRY 5
+================================================================================
+Autor: Generado y optimizado mediante REFramework Lua API
+Juego: Devil May Cry 5 (PC - Steam / DX11 / DX12)
+Requisito previo: REFramework instalado en la carpeta principal del juego.
+
+--------------------------------------------------------------------------------
+1. DESCRIPCIÓN GENERAL
+--------------------------------------------------------------------------------
+El "Enemy Spawner Personalizado" es una herramienta Lua ligera y ultra-estable 
+para REFramework que permite invocar cualquier enemigo presente en el nivel 
+actual de Devil May Cry 5 directamente en tiempo real. 
+
+Ha sido diseñado para ofrecer la máxima compatibilidad, rendimiento fluido 
+sin caídas de fotogramas y control mediante interfaz gráfica (ImGui) o teclas 
+de acceso rápido (Hotkeys).
+
+--------------------------------------------------------------------------------
+2. CARACTERÍSTICAS PRINCIPALES
+--------------------------------------------------------------------------------
+- [⚡] Carga Automática de Enemigos:
+  Detecta e indexa automáticamente todos los archivos de prefabs de enemigos 
+  disponibles (`emXXXX`) apenas entras a un combate o mision.
+
+- [🎯] Generación Inteligente frente a la Cámara:
+  Los enemigos se instancian a una distancia segura de 5 metros frente a la 
+  cámara con una ligera variación aleatoria de posición y orientación para 
+  evitar que se encimen o queden colgados.
+
+- [🎹] 10 Ranuras (Slots) Personalizables:
+  Puedes configurar hasta 10 accesos directos independientes. Cada slot te 
+  permite elegir cualquier enemigo cargado y asignarle su propia hotkey.
+
+- [⌨️] Soporte Extenso de Teclas de Acceso Rápido (Hotkeys):
+  Las hotkeys funcionan de forma global en todo momento (incluso con el menú de 
+  REFramework cerrado). Soporta:
+    * Teclas de Función: F1 a F12
+    * Números superiores: 0 al 9
+    * Teclado Numérico: Numpad 0 a Numpad 9
+    * Abecedario completo: A a la Z
+    * Opción de deshabilitar hotkey ("Sin tecla")
+
+- [🧹] Limpieza Instantánea (Clear System):
+  Incluye un botón dedicado "Limpiar Generados" y una hotkey personalizable de 
+  limpieza para destruir instantáneamente todas las entidades invocadas por el 
+  mod sin afectar a los enemigos nativos del juego.
+
+- [💾] Guardado Automático de Ajustes (JSON Persistence):
+  Todas tus elecciones de enemigos en cada slot y las teclas asignadas se 
+  guardan automáticamente en un archivo local (`EnemySpawnerPersonalizado_Settings.json`). 
+  Tus configuraciones se restaurarán de forma automática la próxima vez que abrís el juego.
+
+- [🚀] Sistema de Instanciación Diferida Asíncrona:
+  Utiliza el hook nativo `UpdateMotion` y carpetas dedicadas en la escena para 
+  garantizar que la instanciación de modelos 3D nunca congele o trabe la pantalla.
+
+--------------------------------------------------------------------------------
+3. GUÍA DE INSTALACIÓN
+--------------------------------------------------------------------------------
+1. Asegúrate de tener REFramework instalado en la carpeta raíz de DMC5 
+   (donde se encuentra `DevilMayCry5.exe`).
+2. Copia el archivo `EnemySpawnerPersonalizado.lua` a la siguiente carpeta:
+   `Devil May Cry 5/reframework/autorun/`
+3. Inicia el juego. 
+4. Presiona la tecla [INSERT] para abrir el menú de REFramework.
+5. Verás la opción "Enemy Spawner Personalizado" lista para usar.
+
+--------------------------------------------------------------------------------
+4. MODO DE USO
+--------------------------------------------------------------------------------
+1. Entra a una misión o al Palacio Sangriento (Bloody Palace) y empieza un combate.
+2. Abre el menú de REFramework [INSERT] y despliega "Enemy Spawner Personalizado".
+3. Haz clic en "CARGAR ENEMIGOS". El menú te indicará cuántos enemigos se 
+   encontraron en el piso/nivel actual.
+4. En cada uno de los 10 Slots:
+   - Selecciona la tecla que deseas usar en la lista desplegable izquierda.
+   - Selecciona el enemigo que deseas invocar en la lista desplegable derecha.
+   - Presiona el botón "Spawn!" o la Hotkey correspondiente para invocarlo.
+5. Para eliminar a todos los enemigos invocados, presiona el botón "Limpiar Generados" 
+   o usa la tecla asignada en "Tecla Limpiar".
+
+================================================================================
+                            ¡Disfruta del Mod!
+================================================================================
